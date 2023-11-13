@@ -1,17 +1,34 @@
-// Array de Strings
-const myArray: string[] = ["apple", "banana", "orange"];
-console.log('manipulando array');
-console.log('==================');
-const buscarElemento = myArray.find(elemento => elemento === 'banana');
-console.log('buscando elemento com find: ', buscarElemento);
-console.log('------------------');
-myArray.forEach(myArray => console.log(myArray));
-myArray.forEach(myArray => {
-    if (myArray === 'banana') {
-        console.log('banana encontrada');
+/* const user = {
+    name: 'Jhow',
+    age: 20,
+    showName() {
+        console.log(this.name);
     }
-});
-console.log('buscando elemento com forEach');
-console.log('------------------');
-myArray.map(myArray => console.log(myArray));
-console.log('buscando elemento com map');
+}
+const user2 = {
+    name: 'Jonh',
+    age: 21,
+    showName() {
+        console.log(this.name);
+    }
+}
+ */
+class User {
+    name: string = 'Jhow'
+    age: number = 20
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    showName = () => {
+        console.log(this.name);
+    }
+}
+
+const user = new User('Jhow', 20);
+user.showName();
+
+const user2 = new User('Jonh', 21);
+user2.showName();
