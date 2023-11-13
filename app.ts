@@ -1,34 +1,23 @@
-/* const user = {
-    name: 'Jhow',
-    age: 20,
-    showName() {
-        console.log(this.name);
-    }
-}
-const user2 = {
-    name: 'Jonh',
-    age: 21,
-    showName() {
-        console.log(this.name);
-    }
-}
- */
-class User {
-    name: string = 'Jhow'
-    age: number = 20
+class Account {
+    name: string;
+    accountNumber: number;
 
-    constructor(name: string, age: number) {
+    constructor(name: string, accountNumber: number) {
         this.name = name;
-        this.age = age;
+        this.accountNumber = accountNumber;
     }
 
-    showName = () => {
-        console.log(this.name);
+    deposit = () => {
+        console.log("Você depositou dinheiro na sua conta");
+    }
+
+    withdraw = () => {
+        console.log("Você sacou dinheiro da sua conta");
     }
 }
 
-const user = new User('Jhow', 20);
-user.showName();
+const newAccount = new Account("Jhow", 1);
+console.log(newAccount);
 
-const user2 = new User('Jonh', 21);
-user2.showName();
+const newAccount2 = new Account("Jonh", 2);
+newAccount2.deposit();
