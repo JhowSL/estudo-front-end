@@ -129,4 +129,4 @@ export abstract class BankAccount {
 }
 ```
 
-Este projeto representa uma estrutura básica de um sistema bancário em TypeScript, utilizando herança e polimorfismo para criar diferentes tipos de contas bancárias. O arquivo `app.ts` demonstra a criação de uma conta de pessoa física e a realização de um depósito nessa conta.
+Este projeto representa uma estrutura básica de um sistema bancário em TypeScript, utilizando herança e polimorfismo para criar diferentes tipos de contas bancárias. O arquivo `app.ts` demonstra a criação de uma conta de pessoa física e a realização de um depósito nessa conta. 
