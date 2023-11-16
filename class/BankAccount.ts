@@ -1,7 +1,7 @@
 // Classe abstrata BankAccount que representa uma conta bancária genérica
 export abstract class BankAccount {
     private name: string; // Nome do titular da conta
-    accountNumber: number; // Número da conta
+    private readonly accountNumber: number; // Número da conta
     balance: number = 0; // Saldo da conta, inicializado como 0
     private status: boolean = true; // Status da conta, inicializado como true
 

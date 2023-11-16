@@ -16,3 +16,8 @@ console.log(peopleAccount);
 
 // Chama o método de depósito na conta de pessoa física
 peopleAccount.deposit();
+
+// Cria uma nova instância da classe CompanyAccount, representando uma conta de empresa
+// O construtor da classe CompanyAccount é chamado com os argumentos: 'BlackBank' (nome da empresa) e 100 (saldo inicial)
+const companyAccount: CompanyAccount = new CompanyAccount('BlackBank', 100);
+companyAccount.deposit();
