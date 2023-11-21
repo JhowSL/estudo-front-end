@@ -1,23 +1,41 @@
-// Importa a classe BankAccount do arquivo BankAccount.ts
-import { BankAccount } from './class/BankAccount';
+import { CompanyAccount } from "./class/CompanyAccount";
+import { DioAccount, DioSpecialAccount } from "./class/DioAccount";
+import { PeopleAccount } from "./class/PeopleAccount";
 
-// Importa a classe CompanyAccount do arquivo CompanyAccount.ts
-import { CompanyAccount } from './class/CompanyAccount';
+// Cria uma nova conta de pessoa com id 1, nome 'Jhow' e saldo inicial de 10
+const peopleAccount: PeopleAccount = new PeopleAccount(1, "Jhow", 10);
 
-// Importa a classe PeopleAccount do arquivo PeopleAccount.ts
-import { PeopleAccount } from './class/PeopleAccount';
+// Imprime o nome do cliente
+console.log(`Nome do Cliente: ${peopleAccount.getName()}`);
 
-// Cria uma nova instância da classe PeopleAccount, representando uma conta de pessoa física
-// O construtor da classe PeopleAccount é chamado com os argumentos: 1 (número da conta), 'Jhow' (nome do titular) e 10 (saldo inicial)
-const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Jhow', 10);
+// Deposita 100 na conta da pessoa
+peopleAccount.deposit(100);
 
-// Imprime a instância da conta de pessoa física no console
-console.log(peopleAccount);
+// Retira 101 da conta da pessoa
+peopleAccount.withdraw(101);
 
-// Chama o método de depósito na conta de pessoa física
-peopleAccount.deposit();
+console.log(`Você tem ${peopleAccount.balance} na conta`);
 
-// Cria uma nova instância da classe CompanyAccount, representando uma conta de empresa
-// O construtor da classe CompanyAccount é chamado com os argumentos: 'BlackBank' (nome da empresa) e 100 (saldo inicial)
-const companyAccount: CompanyAccount = new CompanyAccount('BlackBank', 100);
-companyAccount.deposit();
+console.log("----------------------------------");
+
+// Cria uma nova conta de empresa com o nome 'DIO' e saldo inicial de 20
+const companyAccount: CompanyAccount = new CompanyAccount("DIO", 20);
+
+// Imprime o nome da empresa
+console.log(`Dados da Instituição: ${companyAccount.getName()}`);
+
+// Deposita 200 na conta da empresa
+companyAccount.deposit(200);
+
+// A empresa pega um empréstimo de 1000
+companyAccount.getLoan(1000);
+
+console.log("----------------------------------");
+
+// Aqui você deve criar uma instância da classe DioSpecialAccount
+const minhaContaEspecial: DioSpecialAccount = new DioSpecialAccount("John", 2);
+console.log(`Nome do Cliente: ${minhaContaEspecial.getName()}`);
+// Deposite um valor na conta
+minhaContaEspecial.deposit(100);
+// Imprima o saldo da conta
+console.log(`Você ganhou um bônus de 10: ${minhaContaEspecial.balance}`);

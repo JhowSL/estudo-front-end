@@ -1,132 +1,38 @@
-Projeto de Banco
-================
+# Desenvolvendo o Dio Bank
+desenvolvido por [Nathally Souza](https://github.com/nathyts)
 
-Este é um projeto simples de um sistema bancário em TypeScript, composto por três tipos de contas: `PeopleAccount`, `CompanyAccount`, e uma classe genérica `BankAccount`. O código está dividido em três arquivos: `app.ts`, `PeopleAccount.ts`, `CompanyAccount.ts`, e `BankAccount.ts`. Abaixo está uma descrição de cada parte do projeto.
+#### Projeto desenvolvido com conceitos básicos de typescript
 
-`app.ts`
---------
+### Tecnologias
+- Typescript
 
-typescript
+### Como rodar o projeto
 
-```typescript
-// Importa as classes BankAccount, PeopleAccount e CompanyAccount dos respectivos arquivos
-import { BankAccount } from './class/BankAccount';
-import { PeopleAccount } from './class/PeopleAccount';
-import { CompanyAccount } from './class/CompanyAccount';
+1 - Clone o repositório
 
-// Cria uma nova instância da classe PeopleAccount, representando uma conta de pessoa física
-// O construtor da classe PeopleAccount é chamado com os argumentos: 1 (número da conta), 'Jhow' (nome do titular) e 10 (saldo inicial)
-const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Jhow', 10);
+2 - Instale as dependeências
+    
+    npm install
 
-// Imprime a instância da conta de pessoa física no console
-console.log(peopleAccount);
+3 - Execute o projeto
 
-// Chama o método de depósito na conta de pessoa física
-peopleAccount.deposit();
-```
+    npm run dev
 
-`PeopleAccount.ts`
-------------------
+#### Desafios
+[✓] Implementar os métodos de depósito (deposit) e saque (withdraw) na classe DioAccount
+  - Os valores dos saldos devem ser alterados, de acordo com o valor informado para depósito
+  - Apenas contas com o status true e saldo (balance) maior que o valor solicitado podem fazer saques
 
-typescript
+[✓] Implementar o método de empréstimo (getLoan) na classe CompanyAccount
+  - Os valores do saldos deve ser acrescidos, de acordo com o valor informado para empréstimo
+  - Apenas contas com o status true podem fazer empréstimo
 
-```typescript
-// Importa a classe BankAccount do arquivo BankAccount.ts
-import { BankAccount } from "./BankAccount";
+[✓] Criar um novo tipo de conta a partir da DioAccount
+  - Esta conta não deve receber novos atributos
+  - Esta conta terá um método de depósito, que acresce 10 a mais ao valor informado para depósito. (Ex: Um depósito de 100, será de 110 no final)
 
-// Define a classe PeopleAccount que estende (herda de) a classe BankAccount
-export class PeopleAccount extends BankAccount {
-    // Define uma propriedade doc_id para armazenar o ID do documento da pessoa
-    doc_id: number;
+[✓] Todos os atributos de qualquer conta devem ser privados (REVISAR)
 
-    // Define o construtor da classe
-    constructor(doc_id: number, name: string, accountNumber: number) {
-        // Chama o construtor da classe pai (BankAccount) com os argumentos name e accountNumber
-        super(name, accountNumber);
-        // Define a propriedade doc_id da instância com o valor do argumento doc_id
-        this.doc_id = doc_id;
-    }
-}
-```
+[✓] Os atributos name e accountNumber não podem ser alterados internamente ou externamente
 
-`CompanyAccount.ts`
--------------------
-
-typescript
-
-```typescript
-// Importa a classe BankAccount do arquivo BankAccount.ts
-import { BankAccount } from "./BankAccount";
-
-// Define a classe CompanyAccount que estende (herda de) a classe BankAccount
-export class CompanyAccount extends BankAccount {
-    // Define o construtor da classe
-    constructor(name: string, accountNumber: number) {
-        // Chama o construtor da classe pai (BankAccount) com os argumentos name e accountNumber
-        super(name, accountNumber);
-    }
-
-    // Define um método getLoan que, quando chamado, imprime uma mensagem no console
-    getLoan() {
-        console.log("Você solicitou um empréstimo");
-    }
-
-    // Define um método deposit que, quando chamado, retorna o número 2
-    deposit = (): number => {
-        return 2;
-    }
-}
-```
-
-`BankAccount.ts`
-----------------
-
-typescript
-
-```typescript
-// Classe abstrata BankAccount que representa uma conta bancária genérica
-export abstract class BankAccount {
-    private name: string; // Nome do titular da conta
-    accountNumber: number; // Número da conta
-    balance: number = 0; // Saldo da conta, inicializado como 0
-    private status: boolean = true; // Status da conta, inicializado como true
-
-    // Construtor da classe
-    constructor(name: string, accountNumber: number) {
-        this.name = name; // Define o nome do titular da conta
-        this.accountNumber = accountNumber; // Define o número da conta
-    }
-
-    // Métodos para manipular o nome do titular da conta
-    setName = (name: string): void => {
-        this.name = name;
-        console.log('Nome alterado com sucesso');
-    }
-    getName = (): string => {
-        return this.name;
-    }
-
-    // Métodos para operações bancárias
-    deposit = () => {
-        if (this.validateStatus()) {
-            console.log("Você depositou dinheiro na sua conta");
-        }
-    }
-    withdraw = () => {
-        console.log("Você sacou dinheiro da sua conta");
-    }
-    getBalance = () => {
-        console.log(this.balance);
-    }
-
-    // Método privado para validar o status da conta
-    private validateStatus = (): boolean => {
-        if (this.status) {
-            return this.status;
-        }
-        throw new Error('Conta inativa');
-    }
-}
-```
-
-Este projeto representa uma estrutura básica de um sistema bancário em TypeScript, utilizando herança e polimorfismo para criar diferentes tipos de contas bancárias. O arquivo `app.ts` demonstra a criação de uma conta de pessoa física e a realização de um depósito nessa conta. 
+[✓] Criar instancias para cada um dos tipos de conta no app.ts e executar os métodos possíveis.
