@@ -8,10 +8,17 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@telefonica/mistica": "^14.32.1",
+    "@types/styled-components": "^5.1.31",
+    "framer-motion": "^10.16.5",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.1.2",
