@@ -1,4 +1,5 @@
 import { Box, ChakraProvider, Input, useColorMode, Center, Button, extendTheme, CSSReset, ColorModeProvider } from '@chakra-ui/react';
+import { Login } from './services/Services';
 
 const theme = extendTheme({
   config: {
@@ -49,9 +50,10 @@ const MyComponent = () => {
           marginTop='10px'
         />
         <Button
+        onClick={Login}
           size='sm'
           width='100%'
-          margin='5px'
+          margin='2px'
           backgroundColor={colorMode === 'light' ? 'blue.500' : 'blue.300'}
           _hover={{
             backgroundColor: colorMode === 'light' ? 'blue.300' : 'blue.500',
