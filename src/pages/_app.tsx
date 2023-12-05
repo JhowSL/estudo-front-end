@@ -1,5 +1,7 @@
 import { Box, ChakraProvider, Input, useColorMode, Center, Button, extendTheme, CSSReset, ColorModeProvider } from '@chakra-ui/react';
 import { Login } from './services/Services';
+import { useState, useEffect } from 'react';
+import { api } from './api';
 
 const theme = extendTheme({
   config: {
@@ -20,8 +22,18 @@ const App = () => {
 };
 
 const MyComponent = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const [email, setEmail] = useState('');
 
+  useEffect(() => {
+    const getData = async () => {
+      const data = await api
+      console.log(data)
+
+    }  
+    getData()
+
+  });
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
       minHeight='100vh'
@@ -40,6 +52,8 @@ const MyComponent = () => {
         </Center>
         <Input
           placeholder='Digite seu email'
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           variant='outline'
           borderColor={colorMode === 'light' ? 'gray.400' : 'gray.600'}
         />
@@ -50,7 +64,7 @@ const MyComponent = () => {
           marginTop='10px'
         />
         <Button
-        onClick={Login}
+          onClick={() => Login(email)}
           size='sm'
           width='100%'
           margin='2px'
@@ -76,7 +90,7 @@ const MyComponent = () => {
           Alternar Tema
         </Button>
       </Box>
-    </Box>
+    </Box >
   );
 };
 
