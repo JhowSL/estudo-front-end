@@ -1,7 +1,9 @@
-export default function Header() {
-    return (
-        <div>
-            <h1>Menu Header</h1>
-        </div>
-    )
+import './Header.css'
+
+export const Header  = () => {
+  return(
+    <div className='header'>
+      Dio Bank
+    </div>
+  )
 }
