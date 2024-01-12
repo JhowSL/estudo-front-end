@@ -1,16 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 interface ButtonEventsProps {
-    onClick: () => void;
-    nameButton: string
+  onClick: () => void
+  nameButton: string
 }
 
 const ButtonEvents: React.FC<ButtonEventsProps> = ({ onClick, nameButton }) => {
-    return (
-        <button onClick={onClick}>
-            {nameButton}
-        </button>
-    );
-};
+  return <button onClick={onClick}>{nameButton}</button>
+}
 
-export default ButtonEvents;
+export default ButtonEvents

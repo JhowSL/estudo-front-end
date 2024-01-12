@@ -1,8 +1,7 @@
-import { Card } from "@/components/Card/Card";
-import { Header } from "@/components/Header/Header";
-import { ChakraProvider } from "@chakra-ui/react";
-import React from "react";
-
+import { Card } from '@/components/Card/Card'
+import { Header } from '@/components/Header/Header'
+import { ChakraProvider } from '@chakra-ui/react'
+import React from 'react'
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <Header />
       <Card />
     </ChakraProvider>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from 'react'
 
 export const headerStyle: { container: CSSProperties } = {
   container: {
@@ -7,4 +7,4 @@ export const headerStyle: { container: CSSProperties } = {
     textAlign: 'center',
     padding: '5px',
   },
-};
+}

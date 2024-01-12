@@ -1,11 +1,6 @@
-import React from 'react';
-import { headerStyle } from './HeaderStyle';
-
+import { headerStyle } from './HeaderStyle'
+import React from 'react'
 
 export const Header = () => {
-  return (
-    <div style={headerStyle.container}>
-      Dio Bank
-    </div>
-  );
-};
+  return <div style={headerStyle.container}>Dio Bank</div>
+}
