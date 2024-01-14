@@ -26,6 +26,12 @@ export const Card = () => {
   return (
     <Box minHeight="100vh" backgroundColor="#0D0D0D" padding="25px">
       <Box backgroundColor="#A6A6A6" borderRadius="25px" padding="15px">
+        {userData === null ||
+          (userData === undefined ? (
+            <h1>Loading...</h1>
+          ) : (
+            <h1>Informações Carregadas</h1>
+          ))}
         <Center>
           <h1>Faça o login</h1>
         </Center>
