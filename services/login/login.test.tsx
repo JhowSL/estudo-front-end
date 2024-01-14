@@ -12,7 +12,7 @@ describe('login', () => {
   })
 
   it('Não deve exibir a mensagem de boas vindas sem o email', async () => {
-     await login
+    await login
     expect(mockAlert).not.toHaveBeenCalledWith('Bem vindo!')
   })
 

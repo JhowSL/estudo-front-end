@@ -15,5 +15,5 @@ try {
       "format": "node format.js"
     },
   }
-rodar script npm run format
+rodar script: npm run format
  */
