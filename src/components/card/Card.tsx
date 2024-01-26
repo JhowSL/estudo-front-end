@@ -1,8 +1,8 @@
-import ButtonEvents from '../Button/button'
-import { Center, Input, Box } from '@chakra-ui/react'
-import { SetStateAction, useEffect, useState } from 'react'
-import { api } from 'services/login/api/api'
-import { login } from 'services/login/login'
+import ButtonEvents from '../button/button'
+import { Box, Center, Input } from '@chakra-ui/react'
+import { useState, useEffect, SetStateAction } from 'react'
+import { api } from 'src/services/login/api/api'
+import { login } from 'src/services/login/login'
 
 interface UserData {
   email: string
@@ -25,13 +25,14 @@ export const Card = () => {
 
   return (
     <Box minHeight="100vh" backgroundColor="#0D0D0D" padding="25px">
-      <Box backgroundColor="#A6A6A6" borderRadius="25px" padding="15px">
+      <Box
+        backgroundColor="#A6A6A6"
+        borderRadius="25px"
+        padding="15px"
+        color="black"
+      >
         {userData === null ||
-          (userData === undefined ? (
-            <h1>Loading...</h1>
-          ) : (
-            <h1>Informações Carregadas</h1>
-          ))}
+          (userData === undefined ? <h1>Loading...</h1> : <h1></h1>)}
         <Center>
           <h1>Faça o login</h1>
         </Center>
